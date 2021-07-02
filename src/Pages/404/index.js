@@ -8,13 +8,7 @@ function NotFound404() {
 
   useEffect(() => {
 
-
-    return (() => {
-      if (menuOpen) {
-
-        setMenuOpen(s => !s)
-      }
-    })
+    setMenuOpen(false)
   }, [])
 
 

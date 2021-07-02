@@ -7,13 +7,7 @@ function Board() {
 
   useEffect(() => {
 
-
-    return (() => {
-      if (menuOpen) {
-
-        setMenuOpen(s => !s)
-      }
-    })
+    setMenuOpen(false)
   }, [])
 
   return (

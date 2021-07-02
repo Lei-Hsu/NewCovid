@@ -17,7 +17,7 @@ function App() {
   return (
     <Context.Provider value={{ menuOpen, setMenuOpen }}>
       <div
-        className={`w-screen h-screen font-sans font-bold relative`}
+        className={`w-screen h-screen font-sans font-bold relative bg-gray-100`}
       >
         <Router>
           <Navbar
