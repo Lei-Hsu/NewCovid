@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../../App'
+import { Pending } from '../../Components/Pending/Pending'
+
 
 function Board() {
 
@@ -12,7 +14,7 @@ function Board() {
 
   return (
     <div>
-      board
+      <Pending />
     </div>
   )
 }

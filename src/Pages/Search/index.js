@@ -5,7 +5,8 @@ import { APIKEY } from '../../APIKEY/APIKEY'
 
 function Search() {
 
-  const { menuOpen, setMenuOpen } = useContext(Context)
+  const { menuOpen, setMenuOpen, APIURL } = useContext(Context)
+  const [pending, setPending] = useState(false)
   const [AllCountryData, setAllCountryData] = useState()
   const [CountryData, setCountryData] = useState()
 
@@ -14,6 +15,7 @@ function Search() {
   useEffect(() => {
 
     //取得所有國家名字
+    setPending(true)
     getAllCountryData()
     //收合側邊欄
     setMenuOpen(false)
@@ -22,7 +24,7 @@ function Search() {
 
   //#region 取得所有國家名字資料
   const getAllCountryData = useCallback(() => {
-    fetch("https://covid-193.p.rapidapi.com/countries", {
+    fetch(`${APIURL}/countries`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -38,16 +40,18 @@ function Search() {
           return { label: d, value: d }
         })
         setAllCountryData(countryOptions)
+        setPending(false)
       })
       .catch(err => {
         console.error(err);
+        setPending(false)
       });
   }, [])
   //#endregion
 
   //#region 取得單一國家資料
   const getCountryData = useCallback((countryName) => {
-    fetch(`https://covid-193.p.rapidapi.com/statistics?country=${countryName}`, {
+    fetch(`${APIURL}/statistics?country=${countryName}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -59,11 +63,13 @@ function Search() {
         return response.json()
       })
       .then(Res => {
-        console.log(Res)
-        // setAllCountryData(countryOptions)
+        console.log(Res?.response[0])
+        setCountryData(Res?.response[0])
+        setPending(false)
       })
       .catch(err => {
         console.error(err);
+        setPending(false)
       });
   }, [])
   //#endregion
@@ -74,6 +80,9 @@ function Search() {
       <Components
         AllCountryData={AllCountryData}
         getCountryData={getCountryData}
+        CountryData={CountryData}
+        setPending={setPending}
+        pending={pending}
       />
     </>
   )

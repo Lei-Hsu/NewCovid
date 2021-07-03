@@ -12,10 +12,11 @@ export const Context = React.createContext();
 function App() {
 
   const [menuOpen, setMenuOpen] = useState(false)
+  const APIURL = 'https://covid-193.p.rapidapi.com'
 
 
   return (
-    <Context.Provider value={{ menuOpen, setMenuOpen }}>
+    <Context.Provider value={{ menuOpen, setMenuOpen, APIURL }}>
       <div
         className={`w-screen h-screen font-sans font-bold relative bg-gray-100`}
       >
