@@ -68,25 +68,25 @@ function Components(props) {
             <div className={`w-full flex flex-col  items-center`}>
               <div className={`my-2 lg:my-8 text-3xl`}>{props?.CountryData?.country}</div>
               <div className={`w-full flex flex-col items-center lg:flex-row lg:justify-around space-y-2 lg:space-y-0 lg:space-x-2`}>
-                <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-md bg-red-700 rounded-md text-white`}>
-                  <p className={`text-xl lg:mb-2`}>新增確診</p>
+                <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-md bg-gradient-to-b from-red-600 to-red-900  rounded-md text-white`}>
+                  <p className={`lg:text-xl lg:mb-2`}>新增確診</p>
                   <p>{populationFormat(props?.CountryData?.cases?.new)}</p>
                 </div>
-                <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-md bg-red-700 rounded-md text-white`}>
-                  <p className={`text-xl lg:mb-2`}>新增死亡</p>
+                <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-md bg-gradient-to-b from-red-600 to-red-900  rounded-md text-white`}>
+                  <p className={`lg:text-xl lg:mb-2`}>新增死亡</p>
                   <p>{populationFormat(props?.CountryData?.deaths?.new)}</p>
                 </div>
-                <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-md bg-red-700 rounded-md text-white`}>
-                  <p className={`text-xl lg:mb-2`}>總共確診</p>
+                <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-md bg-gradient-to-b from-red-600 to-red-900  rounded-md text-white`}>
+                  <p className={`lg:text-xl lg:mb-2`}>總共確診</p>
                   <p>{populationFormat(props?.CountryData?.cases?.total)}</p>
                 </div>
-                <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-md bg-red-700 rounded-md text-white`}>
-                  <p className={`text-xl lg:mb-2`}>總共死亡</p>
+                <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-md bg-gradient-to-b from-red-600 to-red-900  rounded-md text-white`}>
+                  <p className={`lg:text-xl lg:mb-2`}>總共死亡</p>
                   <p>{populationFormat(props?.CountryData?.deaths?.total)}</p>
                 </div>
               </div>
-              <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-md bg-blue-400 rounded-md text-white lg:my-8 `}>
-                <p className={`text-xl lg:mb-2`}>查詢日期</p>
+              <div className={`w-44 lg:w-2/12 border-2 lg:p-4  text-center shadow-m bg-gradient-to-b from-blue-400 to-blue-600 rounded-md text-white lg:my-8 `}>
+                <p className={`lg:text-xl lg:mb-2`}>查詢日期</p>
                 <p>{props?.CountryData?.day}</p>
               </div>
             </div>

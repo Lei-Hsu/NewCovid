@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { Context } from '../../App'
+import Components from './Components/Components'
 
 function Home() {
 
@@ -11,9 +12,7 @@ function Home() {
   }, [])
 
   return (
-    <div>
-      Home
-    </div>
+    <Components />
   )
 }
 
