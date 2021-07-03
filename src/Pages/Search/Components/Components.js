@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { ReactComponent as SwitchR } from '../../../Assets/Components/Search/SwitchR.svg'
 import { ReactComponent as SwitchL } from '../../../Assets/Components/Search/SwitchL.svg'
 import { TextInput, Select } from '../../../Components/'
+import { debounce } from 'debounce'
 
 function Components({ mockData }) {
 
   const [Switch, setSwitch] = useState(true)
-  const [Data, setData] = useState({
-    typeCountryName: null,
-    optionCountryName: null
-  })
+  const [typeCountryName, setTypeCountryName] = useState()
+  const [OptionCountryName, setOptionCountryName] = useState()
+
+  // 延遲600毫秒 save data
+  const handleChange = useCallback(
+    debounce((e) => {
+      setTypeCountryName(e.target.value)
+    }, 600)
+    , []);
 
   return (
     <div className={`w-full h-3/4 flex justify-center items-center`}>
@@ -20,18 +26,14 @@ function Components({ mockData }) {
               type={`text`}
               className={``}
               placeholder={`請輸入國家英文名`}
-              // value={Data.typeCountryName ?? ''}
-              value={Data.typeCountryName ?? null}
-              onChange={(e) => setData({ typeCountryName: e.value })}
+              onChange={handleChange}
             />
-            {console.log(Data.typeCountryName)}
+            {console.log(typeCountryName)}
           </div>
           <div className={`${Switch ? 'hidden' : `block`}`}>
             <Select
               className={`w-48`}
               placeholder={`請選擇國家`}
-              // value={Data.optionCountryName ?? ''}
-              // onChange={() => setData(Data.optionCountryName)}
               options={mockData}
             />
           </div>
