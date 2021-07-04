@@ -5,7 +5,7 @@ function DeathsRatioLineChart({ DeathsRatioData, Line1, Line2, Line3, Line4, Lin
   return (
     <div className={`w-full h-full`}>
       <ResponsiveContainer width='100%' height='100%'>
-        <LineChart data={DeathsRatioData} margin={{ top: 5, right: 10, bottom: 5, left: 25 }}>
+        <LineChart data={DeathsRatioData} margin={{ top: 5, right: 50, bottom: 5, left: 10 }}>
           <XAxis dataKey='date' />
           <YAxis />
           <Tooltip />

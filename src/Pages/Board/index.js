@@ -7,19 +7,24 @@ import { APIKEY } from '../../APIKEY/APIKEY'
 
 function Board() {
 
-  const { menuOpen, setMenuOpen, Board_API_URL } = useContext(Context)
-  const [TaiwanDeathsRatioData, setTaiwanDeathsRatioData] = useState()
-  const [UsaDeathsRatioData, setUsaDeathsRatioData] = useState()
-  const [IndiaDeathsRatioData, setIndiaDeathsRatioData] = useState()
-  const [UkDeathsRatioData, setUkDeathsRatioData] = useState()
-  const [MexicoDeathsRatioData, setMexicoDeathsRatioData] = useState()
+  const { menuOpen, setMenuOpen, Board_API_URL, Search_API_URL } = useContext(Context)
+  const [TaiwanDeathsRatioData, setTaiwanDeathsRatioData] = useState() // 台灣死亡率
+  const [UsaDeathsRatioData, setUsaDeathsRatioData] = useState() // 美國死亡率
+  const [IndiaDeathsRatioData, setIndiaDeathsRatioData] = useState() // 印度死亡率
+  const [UkDeathsRatioData, setUkDeathsRatioData] = useState() // 英國死亡率
+  const [MexicoDeathsRatioData, setMexicoDeathsRatioData] = useState() // 墨西哥死亡率
+
+  const [GlobalData, setGlobalData] = useState() // 全球資料
 
   useEffect(() => {
+    // 取得五個國家死亡率
     getCountryWeekDeathsRatioData('mexico', setMexicoDeathsRatioData)
     getCountryWeekDeathsRatioData('uk', setUkDeathsRatioData)
     getCountryWeekDeathsRatioData('india', setIndiaDeathsRatioData)
     getCountryWeekDeathsRatioData('usa', setUsaDeathsRatioData)
     getCountryWeekDeathsRatioData('taiwan', setTaiwanDeathsRatioData)
+    // 取得五大洲資料
+    getContinentData()
     setMenuOpen(false)
   }, [])
 
@@ -60,13 +65,37 @@ function Board() {
   }, [])
   //#endregion
 
+  //#region 取得五大洲資料
+  const getContinentData = useCallback((countryName, setData) => {
+    fetch(`${Search_API_URL}/statistics`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        "x-rapidapi-key": APIKEY,
+        "x-rapidapi-host": "covid-193.p.rapidapi.com"
+      }
+    })
+      .then(response => {
+        return response.json()
+      })
+      .then((Res, error) => {
+        setGlobalData(Res.response)
+      })
+      .catch(err => {
+        alert('請稍後再嘗試')
+        // setPending(false)
+      });
+  }, [])
+  //#endregion
+
   return (
     <Components
-      TaiwanDeathsRatioData={TaiwanDeathsRatioData} // 死亡率資料
-      UsaDeathsRatioData={UsaDeathsRatioData} // 死亡率資料
-      IndiaDeathsRatioData={IndiaDeathsRatioData} // 死亡率資料
-      UkDeathsRatioData={UkDeathsRatioData} // 死亡率資料
-      MexicoDeathsRatioData={MexicoDeathsRatioData} // 死亡率資料
+      TaiwanDeathsRatioData={TaiwanDeathsRatioData} // 台灣死亡率資料
+      UsaDeathsRatioData={UsaDeathsRatioData} // 美國死亡率資料
+      IndiaDeathsRatioData={IndiaDeathsRatioData} // 印度死亡率資料
+      UkDeathsRatioData={UkDeathsRatioData} // 英國死亡率資料
+      MexicoDeathsRatioData={MexicoDeathsRatioData} // 墨西哥死亡率資料
+      GlobalData={GlobalData} // 全球資料
     />
   )
 }
