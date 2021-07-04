@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { handleCountryDeathsRatio, handleFiveContinentData, handleContinentCaseData } from '../../../Handler/'
+import { handleCountryDeathsRatio, handleFiveContinentData, handleContinentCaseData, populationFormat } from '../../../Handler/'
 import DeathsRatioLineChart from '../../../ProjectComponents/DeathsRatioLineChart/DeathsRatioLineChart'
 import BoardPieChart from '../../../ProjectComponents/BoardPieChart/BoardPieChart'
 import TabBottom from '../../../ProjectComponents/TabBottom/TabBottom'
+import BoardTopFive from '../../../ProjectComponents/BoardTopFive/BoardTopFive'
 
 function Components(props) {
 
@@ -115,23 +116,138 @@ function Components(props) {
                   setTab={setSubTab}
                 />
                 <TabBottom
+                  text={`非洲`}
+                  Tab={subTab}
+                  setTab={setSubTab}
+                />
+                <TabBottom
                   text={`大洋`}
                   Tab={subTab}
                   setTab={setSubTab}
                 />
               </div>
             </div>
-            <div className={`w-full h-full mt-4 flex justify-between items-center`}>
-              <div className={`w-1/5 h-full  bg-red-200`}>
-
+            <div className={`w-full h-full mt-4 flex flex-col lg:flex-row justify-between items-center`}>
+              <div className={`w-full h-1/3 lg:w-2/5 lg:h-full text-center`}>
+                今日新增確診人數排行
+                <div className={`flex flex-row lg:flex-col justify-center items-center mt-4`}>
+                  {
+                    subTab === '全球'
+                    &&
+                    GlobalData.map((item, index) => {
+                      return (
+                        <BoardTopFive
+                          item={item}
+                          index={index}
+                        />
+                      )
+                    })
+                  }
+                  {
+                    subTab === '亞洲'
+                    &&
+                    AsiaData.map((item, index) => {
+                      return (
+                        <BoardTopFive
+                          item={item}
+                          index={index}
+                        />
+                      )
+                    })
+                  }
+                  {
+                    subTab === '歐洲'
+                    &&
+                    EuropeData.map((item, index) => {
+                      return (
+                        <BoardTopFive
+                          item={item}
+                          index={index}
+                        />
+                      )
+                    })
+                  }
+                  {
+                    subTab === '美洲'
+                    &&
+                    AmericaData.map((item, index) => {
+                      return (
+                        <BoardTopFive
+                          item={item}
+                          index={index}
+                        />
+                      )
+                    })
+                  }
+                  {
+                    subTab === '非洲'
+                    &&
+                    AfricaData.map((item, index) => {
+                      return (
+                        <BoardTopFive
+                          item={item}
+                          index={index}
+                        />
+                      )
+                    })
+                  }
+                  {
+                    subTab === '大洋'
+                    &&
+                    OceaniaData.map((item, index) => {
+                      return (
+                        <BoardTopFive
+                          item={item}
+                          index={index}
+                        />
+                      )
+                    })
+                  }
+                </div>
               </div>
-              <div className={`w-3/5 h-full`}>
-                <BoardPieChart
-                  data={AsiaData}
-                />
-              </div>
-              <div className={`w-1/5 h-full  bg-red-900`}>
-
+              <div className={`w-full h-2/3 lg:w-3/5 lg:h-full`}>
+                {
+                  subTab === '全球'
+                  &&
+                  <BoardPieChart
+                    data={GlobalData}
+                  />
+                }
+                {
+                  subTab === '亞洲'
+                  &&
+                  <BoardPieChart
+                    data={AsiaData}
+                  />
+                }
+                {
+                  subTab === '歐洲'
+                  &&
+                  <BoardPieChart
+                    data={EuropeData}
+                  />
+                }
+                {
+                  subTab === '美洲'
+                  &&
+                  <BoardPieChart
+                    data={AmericaData}
+                  />
+                }
+                {
+                  subTab === '非洲'
+                  &&
+                  <BoardPieChart
+                    data={AfricaData}
+                  />
+                }
+                {
+                  subTab === '大洋'
+                  &&
+                  <BoardPieChart
+                    data={OceaniaData}
+                  />
+                }
               </div>
             </div>
           </div>
