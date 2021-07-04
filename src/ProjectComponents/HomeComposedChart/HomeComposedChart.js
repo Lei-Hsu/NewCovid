@@ -15,7 +15,6 @@ function HomeComposedChart({ Data, XData, AreaData }) {
         </ComposedChart>
       </ResponsiveContainer>
     </div>
-
   )
 }
 

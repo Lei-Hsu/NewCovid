@@ -86,3 +86,21 @@ export const handleFiveContinentData = (data) => {
   return { global, asia, europe, america, africa, oceania };
 }
 //#endregion
+
+//#region 整理五大洲排行榜資料
+/**
+ * 
+ * @param {*} data 各大洲的資料
+ * @returns 返回只有前五名個國家資料
+ */
+export const handleContinentCaseData = (data) => {
+  let result = [{}, {}, {}, {}, {}]
+  result.forEach((item, index) => {
+    item.country = data[index].country
+  })
+  result.forEach((item, index) => {
+    item.newCases = Number(data[index]?.cases?.new)
+  })
+  return result
+}
+//#endregion
