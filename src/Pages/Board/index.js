@@ -8,7 +8,6 @@ import { APIKEY } from '../../APIKEY/APIKEY'
 function Board() {
 
   const { menuOpen, setMenuOpen, Board_API_URL } = useContext(Context)
-  const [weekDate, setWeekData] = useState()
   const [TaiwanDeathsRatioData, setTaiwanDeathsRatioData] = useState()
   const [UsaDeathsRatioData, setUsaDeathsRatioData] = useState()
   const [IndiaDeathsRatioData, setIndiaDeathsRatioData] = useState()
@@ -44,9 +43,8 @@ function Board() {
           let data = [{}, {}, {}, {}, {}, {}, {},]
           // 資料日期
           let dateData = Object.keys(Res.data)
-          setWeekData(dateData)
           // 資料死亡率
-          let deathsRatioData = Object.values(Res.data).map(i => Math.round((i.death_ratio) * 100))
+          let deathsRatioData = Object.values(Res.data).map(i => Math.round((i.death_ratio) * 1000) / 10)
           data.forEach((item, index) => item.date = dateData[index])
           data.forEach((item, index) => item.deathsRatio = deathsRatioData[index])
           setData(data)
@@ -64,7 +62,6 @@ function Board() {
 
   return (
     <Components
-      weekDate={weekDate} // 一週日期
       TaiwanDeathsRatioData={TaiwanDeathsRatioData} // 死亡率資料
       UsaDeathsRatioData={UsaDeathsRatioData} // 死亡率資料
       IndiaDeathsRatioData={IndiaDeathsRatioData} // 死亡率資料
