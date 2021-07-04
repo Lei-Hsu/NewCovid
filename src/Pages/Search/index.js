@@ -5,7 +5,7 @@ import { APIKEY } from '../../APIKEY/APIKEY'
 
 function Search() {
 
-  const { menuOpen, setMenuOpen, APIURL } = useContext(Context)
+  const { menuOpen, setMenuOpen, Search_API_URL } = useContext(Context)
   const [pending, setPending] = useState(false)
   const [AllCountryData, setAllCountryData] = useState()
   const [CountryData, setCountryData] = useState()
@@ -24,7 +24,7 @@ function Search() {
 
   //#region 取得所有國家名字資料
   const getAllCountryData = useCallback(() => {
-    fetch(`${APIURL}/countries`, {
+    fetch(`${Search_API_URL}/countries`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -51,7 +51,7 @@ function Search() {
 
   //#region 取得單一國家資料
   const getCountryData = useCallback((countryName) => {
-    fetch(`${APIURL}/statistics?country=${countryName}`, {
+    fetch(`${Search_API_URL}/statistics?country=${countryName}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -62,13 +62,18 @@ function Search() {
       .then(response => {
         return response.json()
       })
-      .then(Res => {
-        console.log(Res?.response[0])
-        setCountryData(Res?.response[0])
-        setPending(false)
+      .then((Res, error) => {
+        // console.log(Res?.response[0])
+        if (Res.response[0]) {
+          setCountryData(Res?.response[0])
+          setPending(false)
+        }
+        else {
+          throw error
+        }
       })
       .catch(err => {
-        console.error(err);
+        alert('請輸入正確的國家英文名')
         setPending(false)
       });
   }, [])
