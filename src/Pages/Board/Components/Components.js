@@ -91,31 +91,37 @@ function Components(props) {
             <div className={`w-full`}>
               <div className={`w-full h-full flex justify-center lg:justify-around lg:items-center`}>
                 <TabBottom
+                  className={`mx-0`}
                   text={`全球`}
                   Tab={subTab}
                   setTab={setSubTab}
                 />
                 <TabBottom
+                  className={`mx-0`}
                   text={`亞洲`}
                   Tab={subTab}
                   setTab={setSubTab}
                 />
                 <TabBottom
+                  className={`mx-0`}
                   text={`歐洲`}
                   Tab={subTab}
                   setTab={setSubTab}
                 />
                 <TabBottom
+                  className={`mx-0`}
                   text={`美洲`}
                   Tab={subTab}
                   setTab={setSubTab}
                 />
                 <TabBottom
+                  className={`mx-0`}
                   text={`非洲`}
                   Tab={subTab}
                   setTab={setSubTab}
                 />
                 <TabBottom
+                  className={`mx-0`}
                   text={`大洋`}
                   Tab={subTab}
                   setTab={setSubTab}
