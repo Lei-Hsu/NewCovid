@@ -25,7 +25,7 @@ function App() {
           <Navbar
           />
           <Switch>
-            <Route path='/' exact component={Home} />
+            <Route exact path='/' component={Home} />
             {
               routers.map(route => {
                 return (
