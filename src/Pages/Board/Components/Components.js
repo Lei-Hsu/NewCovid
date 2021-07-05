@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { handleCountryDeathsRatio, handleFiveContinentData, handleContinentCaseData, populationFormat } from '../../../Handler/'
 import DeathsRatioLineChart from '../../../ProjectComponents/DeathsRatioLineChart/DeathsRatioLineChart'
 import BoardPieChart from '../../../ProjectComponents/BoardPieChart/BoardPieChart'
+import TreeChart from '../../../ProjectComponents/TreeChart/TreeChart'
 import TabBottom from '../../../ProjectComponents/TabBottom/TabBottom'
 import BoardTopFive from '../../../ProjectComponents/BoardTopFive/BoardTopFive'
 
@@ -53,7 +54,6 @@ function Components(props) {
     }
   }, [GlobalDataReady])
   //#endregion
-  console.log(AsiaData)
 
   return (
     <div className={`w-full h-3/4 flex justify-center items-center`}>
@@ -66,11 +66,6 @@ function Components(props) {
           />
           <TabBottom
             text={`五大洲排行`}
-            Tab={Tab}
-            setTab={setTab}
-          />
-          <TabBottom
-            text={`還沒想到`}
             Tab={Tab}
             setTab={setTab}
           />

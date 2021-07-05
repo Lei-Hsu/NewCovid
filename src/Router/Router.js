@@ -1,5 +1,6 @@
 import Search from '../Pages/Search/index'
 import Board from '../Pages/Board/index'
+import Introduction from '../Pages/Introduction/index'
 
 
 export const routers = [
@@ -10,5 +11,9 @@ export const routers = [
   {
     path: '/board',
     component: Board
+  },
+  {
+    path: '/introduction',
+    component: Introduction
   },
 ]
