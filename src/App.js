@@ -25,7 +25,7 @@ function App() {
           <Navbar
           />
           <Switch>
-            <Route exact path='/NewCovid' component={Home} />
+            <Route exact path='/' component={Home} />
             {
               routers.map((route, index) => {
                 return (
