@@ -1,15 +1,15 @@
 //#region Navbar 頁面list
 export const NavbarList = [
   {
-    url: '/Introduction',
+    url: '/NewCovid/Introduction',
     title: '簡介'
   },
   {
-    url: '/search',
+    url: '/NewCovid/search',
     title: '搜尋'
   },
   {
-    url: '/board',
+    url: '/NewCovid/board',
     title: '排行榜'
   },
 ]

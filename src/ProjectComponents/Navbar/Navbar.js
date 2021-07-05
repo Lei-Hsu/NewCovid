@@ -12,7 +12,7 @@ function Navbar() {
       <div>
         <Link
           className={`text-4xl text-white`}
-          to='/'
+          to='/NewCovid/'
         >
           Covid
         </Link>

@@ -25,11 +25,11 @@ function App() {
           <Navbar
           />
           <Switch>
-            <Route exact path='/' component={Home} />
+            <Route exact path='/NewCovid' component={Home} />
             {
-              routers.map(route => {
+              routers.map((route, index) => {
                 return (
-                  <Route path={route.path} component={route.component} />
+                  <Route key={index} path={route.path} component={route.component} />
                 )
               })
             }

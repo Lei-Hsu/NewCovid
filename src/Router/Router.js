@@ -5,15 +5,15 @@ import Introduction from '../Pages/Introduction/index'
 
 export const routers = [
   {
-    path: '/search',
+    path: '/NewCovid/search',
     component: Search
   },
   {
-    path: '/board',
+    path: '/NewCovid/board',
     component: Board
   },
   {
-    path: '/introduction',
+    path: '/NewCovid/introduction',
     component: Introduction
   },
 ]
