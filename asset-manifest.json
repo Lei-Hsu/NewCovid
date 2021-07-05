@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/NewCovid/static/css/main.b9945807.chunk.css",
-    "main.js": "/NewCovid/static/js/main.a9ef98f4.chunk.js",
-    "main.js.map": "/NewCovid/static/js/main.a9ef98f4.chunk.js.map",
+    "main.css": "/NewCovid/static/css/main.11174d61.chunk.css",
+    "main.js": "/NewCovid/static/js/main.9dd5d409.chunk.js",
+    "main.js.map": "/NewCovid/static/js/main.9dd5d409.chunk.js.map",
     "runtime-main.js": "/NewCovid/static/js/runtime-main.60838d69.js",
     "runtime-main.js.map": "/NewCovid/static/js/runtime-main.60838d69.js.map",
     "static/js/2.32bd7bd5.chunk.js": "/NewCovid/static/js/2.32bd7bd5.chunk.js",
     "static/js/2.32bd7bd5.chunk.js.map": "/NewCovid/static/js/2.32bd7bd5.chunk.js.map",
     "index.html": "/NewCovid/index.html",
-    "static/css/main.b9945807.chunk.css.map": "/NewCovid/static/css/main.b9945807.chunk.css.map",
+    "static/css/main.11174d61.chunk.css.map": "/NewCovid/static/css/main.11174d61.chunk.css.map",
     "static/js/2.32bd7bd5.chunk.js.LICENSE.txt": "/NewCovid/static/js/2.32bd7bd5.chunk.js.LICENSE.txt",
     "static/media/ArrowTop.9b6569a9.svg": "/NewCovid/static/media/ArrowTop.9b6569a9.svg",
     "static/media/Loading.0c0f9572.svg": "/NewCovid/static/media/Loading.0c0f9572.svg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.60838d69.js",
     "static/js/2.32bd7bd5.chunk.js",
-    "static/css/main.b9945807.chunk.css",
-    "static/js/main.a9ef98f4.chunk.js"
+    "static/css/main.11174d61.chunk.css",
+    "static/js/main.9dd5d409.chunk.js"
   ]
 }
