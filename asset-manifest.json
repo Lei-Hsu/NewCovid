@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/NewCovid/static/css/main.b9945807.chunk.css",
-    "main.js": "/NewCovid/static/js/main.408eab4b.chunk.js",
-    "main.js.map": "/NewCovid/static/js/main.408eab4b.chunk.js.map",
+    "main.js": "/NewCovid/static/js/main.f7393afd.chunk.js",
+    "main.js.map": "/NewCovid/static/js/main.f7393afd.chunk.js.map",
     "runtime-main.js": "/NewCovid/static/js/runtime-main.60838d69.js",
     "runtime-main.js.map": "/NewCovid/static/js/runtime-main.60838d69.js.map",
     "static/js/2.f04c42ca.chunk.js": "/NewCovid/static/js/2.f04c42ca.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.60838d69.js",
     "static/js/2.f04c42ca.chunk.js",
     "static/css/main.b9945807.chunk.css",
-    "static/js/main.408eab4b.chunk.js"
+    "static/js/main.f7393afd.chunk.js"
   ]
 }
