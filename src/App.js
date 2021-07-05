@@ -5,7 +5,7 @@ import Navbar from './ProjectComponents/Navbar/Navbar'
 import Footer from './ProjectComponents/Footer/Footer';
 import NotFound404 from './Pages/404'
 import { routers } from './Router/Router';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 export const Context = React.createContext();
 
@@ -21,7 +21,7 @@ function App() {
       <div
         className={`w-screen h-screen font-sans font-bold relative bg-gray-100`}
       >
-        <Router>
+        <HashRouter>
           <Navbar
           />
           <Switch>
@@ -36,7 +36,7 @@ function App() {
             <Route path='*' component={NotFound404} />
           </Switch>
           <Footer />
-        </Router>
+        </HashRouter>
       </div>
     </Context.Provider>
   );
