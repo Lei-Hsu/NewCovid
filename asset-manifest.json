@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/NewCovid/static/css/main.b9945807.chunk.css",
+    "main.js": "/NewCovid/static/js/main.d8450858.chunk.js",
+    "main.js.map": "/NewCovid/static/js/main.d8450858.chunk.js.map",
+    "runtime-main.js": "/NewCovid/static/js/runtime-main.60838d69.js",
+    "runtime-main.js.map": "/NewCovid/static/js/runtime-main.60838d69.js.map",
+    "static/js/2.f04c42ca.chunk.js": "/NewCovid/static/js/2.f04c42ca.chunk.js",
+    "static/js/2.f04c42ca.chunk.js.map": "/NewCovid/static/js/2.f04c42ca.chunk.js.map",
+    "index.html": "/NewCovid/index.html",
+    "static/css/main.b9945807.chunk.css.map": "/NewCovid/static/css/main.b9945807.chunk.css.map",
+    "static/js/2.f04c42ca.chunk.js.LICENSE.txt": "/NewCovid/static/js/2.f04c42ca.chunk.js.LICENSE.txt",
+    "static/media/ArrowTop.9b6569a9.svg": "/NewCovid/static/media/ArrowTop.9b6569a9.svg",
+    "static/media/Loading.0c0f9572.svg": "/NewCovid/static/media/Loading.0c0f9572.svg",
+    "static/media/Menu.bfaaf7e1.svg": "/NewCovid/static/media/Menu.bfaaf7e1.svg",
+    "static/media/Search.4f1c78e9.svg": "/NewCovid/static/media/Search.4f1c78e9.svg",
+    "static/media/SwitchL.904f2bed.svg": "/NewCovid/static/media/SwitchL.904f2bed.svg",
+    "static/media/SwitchR.f761b89e.svg": "/NewCovid/static/media/SwitchR.f761b89e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.60838d69.js",
+    "static/js/2.f04c42ca.chunk.js",
+    "static/css/main.b9945807.chunk.css",
+    "static/js/main.d8450858.chunk.js"
+  ]
+}
